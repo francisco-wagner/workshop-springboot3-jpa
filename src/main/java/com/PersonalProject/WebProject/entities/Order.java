@@ -110,6 +110,15 @@ public class Order implements Serializable {
 	}
 
 	
+	public double getTotal( ) {
+		double sum = 0.0;
+		for (OrderItem oi : items) {
+			sum += oi.getSubtotal();
+		}
+		return sum;
+	}
+	
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
